@@ -8,13 +8,14 @@ If you would like to train the neural networks before pruning, run:
 
 `python keras_model.py`
 
-This will automatically train the model for 3 epochs (which you can modify) and store the weights in .npy format in the /weights folder. Note: biases are also stored, but for the purposes of this test, they are not used in the feedforward network to test the effects of pruning. Then, to check accuracy with pruning, run:
+This will automatically train the model for 3 epochs (which you can modify) and store the weights in .npy format in the /weights folder. Note: biases are also stored, but for the purposes of this test, they are not used in the feedforward network to test the effects of pruning. 
+To check accuracy with pruning, run:
 
 `python pruning_tf.py`
 
 You can modify pruning values and pruning type (weight or unit pruning) at the bottom of the pruning_tf.py file.
 
-The following are pruning level vs. accuracy on test set results for the large_model:
+The following are graphs depict the effects of k (pruning level) on the accuracy of the model on the MNIST test set:
 
 <img src="/img/weight_pruning.png" alt="Usage Data" width="500" height="400"/>
 <img src="/img/unit_pruning.png" alt="Usage Data" width="500" height="400"/>
