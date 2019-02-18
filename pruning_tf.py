@@ -1,3 +1,8 @@
+'''
+This file contains the feedforward network to test the quality of pruned weights.
+You can modify pruning type and k at the bottom, where it shows tunable parameters.
+'''
+
 import numpy as np
 import tensorflow as tf 
 from pruning_functions import pruning_func
