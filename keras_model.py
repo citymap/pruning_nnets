@@ -1,3 +1,7 @@
+'''
+This file trains the model.
+'''
+
 import tensorflow as tf  
 import numpy as np
 from keras.models import save_model, load_model
@@ -54,5 +58,5 @@ save_weights_and_biases(prunable_biases, 'bias')
 
 # validation loss and accuracy to test quality of model
 val_loss, val_acc = model.evaluate(x_test, y_test)
-print(val_loss)
-print(val_acc)
+print('Validation loss: ', val_loss)
+print('Validation accuracy: ', val_acc)
