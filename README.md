@@ -25,6 +25,14 @@ The following are graphs depict the effects of k (pruning level) on the accuracy
 
 # Analysis
 
-From the graphs, it's clear to see even pruning a lot of weights doesn't result in a drastic loss in accuracy. Concretely, in the case of weight pruning, you would need to prune at least 95% of weights before noticing any noticeable performance decrease.
+From the graphs, it's clear to see even pruning a lot of weights doesn't result in a drastic loss in accuracy. In the case of weight pruning, you would need to prune at least 95% of weights before noticing any noticeable performance decrease. Why is this?
+
+First, it’s important to look at the dataset. MNIST is a dataset of handwritten digits fit into a 28 by 28 grid. However, only a small set of pixel values encode actual digit markings (black pixels). The rest of the pixel values encode white (or empty space). In the first image of the training set, about 70% of the pixel values were 0. This means that the majority of weights in the first layers have no impact, as they are multiplied by 0. This value of 0 then propagates down the feedforward network to the output. Therefore, deleting the weights that correspond to connections of 0 in the input will have no impact on the result. Considering that a large percentage of input corresponds to this 0 value, it is probably that a weight pruned will not be useful to the output.
+
+Another reason is the very nature pruning: it eliminates weights/columns of lower magnitude, and thus weights/columns with less impact on the output. Since we prune weights of lower importance first, we can sustain performance to a certain degree. 
+
+It’s also clear to see unit pruning performed worse than weight pruning. Why? Weight pruning removes the salience of features, while unit pruning removes features (or neurons)  entirely. This causes issues in the case of unit pruning because if one weight in a column vector is large (indicating salience) but the remaining weights are small, this entire neuron could be eliminated. The correct approach is to reduce the impact of the other weights and thus reduce quality a little instead of entirely removing a feature. This is exactly weight pruning, which looks at individual weights, and eliminates them only if they have limited impact on the output. This is a more case-by-case approach to increasing efficiency while maintaining quality.
+
+One interesting result I found was the performance of weight pruning actually jumped by about 0.5% (still an improvement) between k = 0 and k = 20. This is likely because the Keras model produced biases in addition to weights by default, and in my feedforward network, I only used the weights (as per instructions).
 
 
