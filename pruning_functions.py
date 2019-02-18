@@ -3,7 +3,7 @@ import math
 import sys
 
 '''
-This files contains both weight and unit pruning methods.
+This file contains both weight and unit pruning methods.
 '''
 
 # Prune an individual weight using the weight pruning technique.
