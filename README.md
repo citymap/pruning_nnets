@@ -1,4 +1,4 @@
-# Pruning Weights on a Large Neural Net
+# Pruning on a Large Neural Net
 
 This is a Keras/TensorFlow implementation of MNIST classification with pruning. This model (which is specifically for the ForAI challenge) contains 4 fully-connected ReLU layers and 1 fully-connected softmax layer.
 
