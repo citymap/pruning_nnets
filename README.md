@@ -25,6 +25,6 @@ The following are graphs depict the effects of k (pruning level) on the accuracy
 
 # Analysis
 
-From the graphs, it's clear to see even pruning a lot of weights doesn't result in a drastic loss in accuracy. In the case of weight pruning, you would need to prune at least 95% of weights before noticing any noticeable performance decrease.
+From the graphs, it's clear to see even pruning a lot of weights doesn't result in a drastic loss in accuracy. Concretely, in the case of weight pruning, you would need to prune at least 95% of weights before noticing any noticeable performance decrease.
 
 
