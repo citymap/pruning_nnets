@@ -18,6 +18,8 @@ Weights have already been trained and stored in the weights/ folder, so you don'
 
 You can modify pruning values and pruning type (weight or unit pruning) at the bottom of the pruning_tf.py file.
 
+# Results
+
 The following are graphs depict the effects of k (pruning level) on the accuracy of the model on the MNIST test set:
 
 <img src="/img/weight_pruning.png" alt="Usage Data" width="500" height="400"/>
