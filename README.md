@@ -1,6 +1,6 @@
 # Pruning on a Large Neural Net
 
-This is a Keras/TensorFlow implementation of MNIST classification with pruning. This model (which is specifically for the ForAI challenge) contains 4 fully-connected ReLU layers and 1 fully-connected softmax layer.
+This is a Keras/TensorFlow implementation of MNIST classification with pruning. This model contains 4 fully-connected ReLU layers and 1 fully-connected softmax layer.
 
 # Installation Requirements
 To run the model, you will need to install Tensorflow and Keras. You can install both using pip. To speed up training time, you can install Tensorflow-gpu, though I have already trained weights for use in the pruning experiments.
